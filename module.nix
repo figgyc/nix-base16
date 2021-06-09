@@ -30,7 +30,9 @@ let
       allowSubstitutes = false; # will never be in cache
     });
 
-  theme = loadyaml { src = "${lib.base16.scheme}/${cfg.variant}.yaml"; };
+  scheme = if lib.isString cfg.scheme then base16scheme cfg.scheme else cfg.scheme;
+  base16scheme = scheme: pkgs.fetchgit (schemes."${scheme}");
+  theme = loadyaml { src = "${scheme}/${cfg.variant}.yaml"; };
 in {
   options = {
     themes.base16 = {
@@ -51,11 +53,8 @@ in {
   };
 
   config = mkIf cfg.enable
-    (let base16scheme = scheme: pkgs.fetchgit (schemes."${scheme}");
-    in rec {
+    (in rec {
       lib.base16.theme = theme // cfg.extraParams;
-      lib.base16.scheme =
-        if lib.isString cfg.scheme then base16scheme cfg.scheme else cfg.scheme;
       lib.base16.base16template = repo:
         mustache (theme // cfg.extraParams) repo
         "${pkgs.fetchgit (templates."${repo}")}/templates/default.mustache";
