@@ -53,7 +53,7 @@ in {
   };
 
   config = mkIf cfg.enable
-    (in rec {
+    (rec {
       lib.base16.theme = theme // cfg.extraParams;
       lib.base16.base16template = repo:
         mustache (theme // cfg.extraParams) repo
