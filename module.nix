@@ -82,7 +82,8 @@ in {
 
         postPatch = ''
           for file in $(ls gtk-3.20/gtk.css gtk-3.0/gtk.css gtk-2.0/gtkrc); do
-            ${pkgs.mustache-go}/bin/mustache $data $file > $file
+            ${pkgs.mustache-go}/bin/mustache $data $file > $file.tmp
+            mv $file.tmp $file
           done
         '';
 
