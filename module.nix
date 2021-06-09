@@ -78,9 +78,11 @@ in {
           ./gtk32.patch
         ];
 
+        data = pkgs.writeText "data" (builtins.toJSON lib.base16.theme);
+
         postPatch = ''
           for file in $(ls gtk-3.20/gtk.css gtk-3.0/gtk.css gtk-2.0/gtkrc); do
-            ${pkgs.mustache-go}/bin/mustache ${builtins.toJSON lib.base16.theme} $file > $file
+            ${pkgs.mustache-go}/bin/mustache $data $file > $file
           done
         '';
 
