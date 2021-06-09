@@ -1,5 +1,5 @@
 #! /usr/bin/env nix-shell
-#! nix-shell -i bash shell.nix
+#! nix-shell -i bash -p bash curl nix-prefetch-git gnused jq
 
 # Run from within the directory which needs the templates.json/schemes.json
 
@@ -9,13 +9,13 @@
 generate_sources () {
   out=$1
   curl "https://raw.githubusercontent.com/chriskempson/base16-${out}-source/master/list.yaml"\
-  | yq -r 'to_entries|map("\(.key) \(.value|tostring)")|.[]'\
+  | sed -nE "s~^([-_[:alnum:]]+): *(.*)~\1 \2~p"\
   | while read name src; do
       echo "{\"key\":\"$name\",\"value\":"
       nix-prefetch-git $src
       echo "}"
     done\
-  | jq -s ".|del(.[].value.date)|from_entries"\
+  | jq -s ".|del(.[].value.date)|del(.[].value.path)|from_entries"\
   > $out.json
 }
 
