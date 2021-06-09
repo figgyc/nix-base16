@@ -1,0 +1,33 @@
+diff --git a/gtk-3.0/gtk.css b/gtk-3.0/gtk.css
+index 21c64c0..9c43bd7 100644
+--- a/gtk-3.0/gtk.css
++++ b/gtk-3.0/gtk.css
+@@ -1,13 +1,20 @@
+ 
+ /* Default color scheme */
+-@define-color bg_color #131971;
+-@define-color fg_color #fff2ff;
+-@define-color base_color #9E9BDE;
+-@define-color text_color #fff2ff;
+-@define-color selected_bg_color #7e6ccb;
+-@define-color selected_fg_color #fff2ff;
+-@define-color tooltip_bg_color #131971;
+-@define-color tooltip_fg_color #fff2ff;
++/*
++Base16 {{scheme-name}}
++Author: {{scheme-author}}
++In files gtk-3.0/gtk.css and gtk-3.20/gtk.css, delete section "Default color scheme" and inject this
++*/
++
++@define-color bg_color #{{base00-hex}};
++@define-color fg_color #{{base05-hex}};
++@define-color base_color #{{base01-hex}};
++@define-color text_color #{{base05-hex}};
++@define-color text_color_disabled #{{base03-hex}};
++@define-color selected_bg_color #{{base02-hex}};
++@define-color selected_fg_color #{{base05-hex}};
++@define-color tooltip_bg_color #{{base00-hex}};
++@define-color tooltip_fg_color #{{base05-hex}};
+ 
+ /* colormap actually used by the theme, to be overridden in other css files */
+ @define-color theme_bg_color @bg_color;

@@ -1,0 +1,93 @@
+{
+  "nodes": {
+    "base16-schemes-source": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1618400560,
+        "narHash": "sha256-3BypcskYN9xXRAZ6empRQGF1gcMRpyfKg9Tx1fjPxKw=",
+        "owner": "chriskempson",
+        "repo": "base16-schemes-source",
+        "rev": "e720724b96f77f3d63f5cfbe8f9616ddc6ea0ecb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "chriskempson",
+        "repo": "base16-schemes-source",
+        "type": "github"
+      }
+    },
+    "base16-templates-source": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1618399618,
+        "narHash": "sha256-POo6TpiDWHPR3zPqvh9/rlgT8upU99zVHr9CvzRTK0Q=",
+        "owner": "chriskempson",
+        "repo": "base16-templates-source",
+        "rev": "420ca457387950d93146748e44eb4cec94d79cee",
+        "type": "github"
+      },
+      "original": {
+        "owner": "chriskempson",
+        "repo": "base16-templates-source",
+        "type": "github"
+      }
+    },
+    "flake-compat": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1606424373,
+        "narHash": "sha256-oq8d4//CJOrVj+EcOaSXvMebvuTkmBJuT5tzlfewUnQ=",
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "rev": "99f1c2157fba4bfe6211a321fd0ee43199025dbf",
+        "type": "github"
+      },
+      "original": {
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "type": "github"
+      }
+    },
+    "flake-utils": {
+      "locked": {
+        "lastModified": 1622445595,
+        "narHash": "sha256-m+JRe6Wc5OZ/mKw2bB3+Tl0ZbtyxxxfnAWln8Q5qs+Y=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "7d706970d94bc5559077eb1a6600afddcd25a7c8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1623154001,
+        "narHash": "sha256-KxsIXg5ez5SveGayOKcW+MnofqVuLnwZHE5mZgtRAJo=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "3bc8e5cd23b84b2e149e7aaad57117da16a19e6f",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "ref": "nixpkgs-unstable",
+        "type": "indirect"
+      }
+    },
+    "root": {
+      "inputs": {
+        "base16-schemes-source": "base16-schemes-source",
+        "base16-templates-source": "base16-templates-source",
+        "flake-compat": "flake-compat",
+        "flake-utils": "flake-utils",
+        "nixpkgs": "nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
