@@ -85,9 +85,9 @@ in {
           done
         '';
 
-        buildInputs = [ gdk-pixbuf librsvg ];
+        buildInputs = with pkgs; [ gdk-pixbuf librsvg ];
 
-        propagatedUserEnvPkgs = [ gtk-engine-murrine ];
+        propagatedUserEnvPkgs = with pkgs; [ gtk-engine-murrine ];
 
         installPhase = ''
           runHook preInstall
