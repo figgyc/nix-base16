@@ -68,7 +68,7 @@ in {
         src = pkgs.fetchFromGitHub {
           owner = "jasperro";
           repo = "FlatColor";
-          rev = version;
+          rev = "0a56c50e8c5e2ad35f6174c19a00e01b30874074";
           sha256 = "0pv3fmvs8bfkn5fwyg9z8fszknmca4sjs3210k15lrrx75hngi1z";
         };
 
