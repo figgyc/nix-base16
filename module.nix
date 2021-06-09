@@ -52,7 +52,7 @@ in {
 
   config = mkIf cfg.enable
     (let base16scheme = scheme: pkgs.fetchgit (schemes."${scheme}");
-    in {
+    in rec {
       lib.base16.theme = theme // cfg.extraParams;
       lib.base16.scheme =
         if lib.isString cfg.scheme then base16scheme cfg.scheme else cfg.scheme;
