@@ -65,7 +65,7 @@ in {
         pname = "flatcolor-gtk-theme";
         version = "0a56c50e8c5e2ad35f6174c19a00e01b30874074";
 
-        src = fetchFromGitHub {
+        src = pkgs.fetchFromGitHub {
           owner = "jasperro";
           repo = "FlatColor";
           rev = version;
