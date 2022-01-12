@@ -18,7 +18,7 @@ let
     });
 
   # nasty python script for dealing with yaml + different output types
-  python = pkgs.python.withPackages (ps: with ps; [ pyyaml ]);
+  python = pkgs.python3.withPackages (ps: with ps; [ pyyaml ]);
   loadyaml = { src, name ? "yaml" }:
     importJSON (pkgs.stdenv.mkDerivation {
       inherit name src;
