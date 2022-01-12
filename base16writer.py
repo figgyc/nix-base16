@@ -1,7 +1,7 @@
 import yaml
 import json
 import sys
-input = yaml.load(sys.stdin, loader=yaml.SafeLoader)
+input = yaml.load(sys.stdin, Loader=yaml.SafeLoader)
 input["colors"] = {}
 for (k,v) in input.copy().items():
     if k[0:4] == "base":
